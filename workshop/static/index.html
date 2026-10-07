@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridgeline Outfitters — Pricing &amp; Credit</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-left">
+    <span class="brand">Ridgeline Outfitters</span>
+    <span class="step" id="step-label">loading…</span>
+    <span class="tools-live" id="tools-live"></span>
+  </div>
+  <div class="bar-right">
+    <label class="switch" title="Disconnect or connect the Ridgeline MCP server">
+      <input type="checkbox" id="tools-toggle" checked>
+      <span class="switch-track"><span class="switch-knob"></span></span>
+      <span class="switch-label" id="tools-label">Tools on</span>
+    </label>
+    <button id="wire-btn" class="ghost" title="Show the raw tools/list JSON">tools/list</button>
+    <div class="zoom">
+      <button id="zoom-out" class="ghost" title="Smaller text">A&minus;</button>
+      <button id="zoom-in" class="ghost" title="Bigger text">A+</button>
+    </div>
+    <button id="new-btn" class="primary" title="Clear the chat and restart the MCP server">New conversation</button>
+  </div>
+</header>
+
+<div id="banner" class="banner hidden"></div>
+
+<main id="transcript">
+  <div class="empty" id="empty-state">
+    <p class="empty-title" id="empty-title"></p>
+    <p class="empty-about" id="empty-about"></p>
+  </div>
+</main>
+
+<aside id="wire" class="wire hidden">
+  <div class="wire-head">
+    <strong>tools/list</strong>
+    <span class="wire-sub">what the model is actually given — name, description, inputSchema</span>
+    <button id="wire-close" class="ghost">close</button>
+  </div>
+  <pre id="wire-body"></pre>
+</aside>
+
+<form id="composer" class="composer">
+  <textarea id="input" rows="2" placeholder="Ask about an account, a price, credit or a discount…" autofocus></textarea>
+  <button type="submit" id="send" class="primary send">Send</button>
+</form>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

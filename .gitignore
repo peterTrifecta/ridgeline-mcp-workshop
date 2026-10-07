@@ -1,0 +1,32 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Presenter-only notes
+docs/internal/
+CLAUDE.local.md
+
+# Generated mock databases (rebuilt on startup)
+*.db
+*.db-journal
+
+# Python / uv
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Tool and OS clutter
+.sf/
+.sfdx/
+.DS_Store
+.vscode/
+.idea/
+
+# Workshop step state (written by `uv run reset`)
+.workshop_state.json

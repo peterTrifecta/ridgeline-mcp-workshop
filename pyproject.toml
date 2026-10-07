@@ -1,0 +1,33 @@
+[project]
+name = "ridgeline-mcp-workshop"
+version = "0.1.0"
+description = "Ridgeline Outfitters — a small governed MCP server, with a chat page that shows every tool call"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.3,<3",
+    "anthropic>=0.40.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+start = "workshop.cli:start"
+check = "workshop.cli:check"
+reset = "workshop.cli:reset"
+test = "workshop.cli:test"
+smoke = "workshop.cli:smoke"
+ridgeline-mcp = "workshop.mcp_launcher:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["workshop", "data"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
